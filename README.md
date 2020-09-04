@@ -38,8 +38,3 @@ url: '/api/?act=getEsavlDirections&p1=4&p2=3&p3=300&p4='+from[1]+'&p5='+from[0]+
 [OASA-Telematics](http://telematics.oasa.gr/#main)
 
 [OASA Telematics Script](http://telematics.oasa.gr/js/script.js)
-
-**TODO**
-
-1. Better Tests
-2. Example Application
