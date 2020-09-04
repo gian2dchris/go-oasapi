@@ -18,8 +18,6 @@ func TestErrorResponse(t *testing.T) {
 	var errorResponse errorResponse
 	err = c.sendRequest(req, &errorResponse)
 	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Printf("ErrorResponse: %+v\n", errorResponse)
+		t.Error("Error:", err)
 	}
 }

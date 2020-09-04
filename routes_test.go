@@ -1,7 +1,6 @@
 package oasapi
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,13 +10,10 @@ func TestWebGetRoutes(t *testing.T) {
 	resp, err := c.webGetRoutes(1151)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-
-	if resp != nil {
-		fmt.Printf("RouteCode: %s\n", resp[0].RouteCode)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 }
 
@@ -27,13 +23,10 @@ func TestGetRoutesForLine(t *testing.T) {
 	resp, err := c.getRoutesForLine(1151)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-
-	if resp != nil {
-		fmt.Printf("RouteID: %s\n", resp[0].RouteID)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 }
 func TestWebRouteDetails(t *testing.T) {
@@ -42,13 +35,10 @@ func TestWebRouteDetails(t *testing.T) {
 	resp, err := c.webRouteDetails(2484)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-
-	if resp != nil {
-		fmt.Printf("RoutedOrder: %s\n", resp[0].RoutedOrder)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 
 }
@@ -58,12 +48,10 @@ func TestGetRouteName(t *testing.T) {
 	resp, err := c.getRouteName(2484)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-	if resp != nil {
-		fmt.Printf("RouteDescr: %s\n", resp[0].RouteDescr)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 }
 
@@ -73,13 +61,10 @@ func TestWebGetStops(t *testing.T) {
 	resp, err := c.webGetStops(2484)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-
-	if resp != nil {
-		fmt.Printf("StopCode: %s\n", resp[0].StopCode)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 }
 
@@ -88,12 +73,10 @@ func TestGetBusLocation(t *testing.T) {
 	resp, err := c.getBusLocation(2484)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-	if resp != nil {
-		fmt.Printf("VEH_NO: %s\n", resp[0].VEHNO)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 
 }
@@ -103,12 +86,10 @@ func TestRoutesForStop(t *testing.T) {
 	resp, err := c.webRoutesForStop(10175)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-	if resp != nil {
-		fmt.Printf("VEH_NO: %s\n", resp[0].RouteCode)
-	} else {
-		fmt.Println("Null response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 
 }
@@ -118,13 +99,9 @@ func TestWebGetRoutesDetailsAndStops(t *testing.T) {
 	resp, err := c.webGetRouteDetailsAndStops(2484)
 
 	if err != nil {
-		fmt.Println(err)
+		t.Error("Error:", err)
 	}
-
-	if resp != nil {
-		fmt.Println("RouteStops:", resp.Stops[0])
-		fmt.Println("RouteDetails:", resp.Details[0])
-	} else {
-		fmt.Println("Null Response:", resp)
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 }

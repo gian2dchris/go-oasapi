@@ -1,7 +1,6 @@
 package oasapi
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,8 +10,9 @@ func TestWebGetLangs(t *testing.T) {
 	resp, err := c.getLangs()
 
 	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Printf("LangID: %+v\n", resp[0].LangID)
+		t.Error("Error:", err)
+	}
+	if resp == nil {
+		t.Error("Error: null response")
 	}
 }
